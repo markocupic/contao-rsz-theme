@@ -1,0 +1,71 @@
+body {
+  background-color: $body-bg;
+}
+
+// overwrite bootstrap .container padding
+
+#header {
+
+  background-color: #fff !important;
+  border-bottom: 1px solid $gray-200;
+
+  .inside {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    @include media-breakpoint-down(sm) {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+
+    .navbar {
+      background: transparent !important;
+
+      .container-lg {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        @include media-breakpoint-down(sm) {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+        }
+      }
+    }
+
+  }
+
+}
+
+#footer {
+
+  .container-lg {
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  .footer-headline {
+    color: #fff;
+  }
+
+  .footer-top {
+    background: $red;
+    color: #fff !important;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .footer-bottom {
+    background: #fff;
+    color: #000 !important;
+
+    a {
+      color: #000;
+    }
+  }
+}

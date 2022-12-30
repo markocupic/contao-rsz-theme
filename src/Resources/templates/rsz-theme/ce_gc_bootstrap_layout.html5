@@ -1,0 +1,265 @@
+<?php
+/* CSS for the frontend-output */
+//$GLOBALS['TL_CSS'][] = 'system/modules/gallery_creator/assets/css/gallery_creator_fe.css';
+
+/* javascript for the frontend-output */
+//$GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/gallery_creator/assets/js/gallery_creator_fe.js';
+?>
+
+<?php if (!\Input::get('items')): ?>
+    <!-- gallery_creator - album list -->
+    <div class="<?php echo $this->class; ?> gallery_creator block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+        <?php if ($this->headline): ?>
+            <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+        <?php endif; ?>
+
+        <?php echo $this->pagination; ?>
+
+        <?php if (count($this->arrAlbums)>0): ?>
+            <ul class="list_albums">
+                <?php foreach ($this->arrAlbums as $Album): ?>
+                    <li class="row level_1 block m-0 pb-4 pt-4">
+                        <div class="col_1 col-12 col-sm-4 mt-0 mb-0">
+                            <figure class="image_container" onmouseover="<?php echo $Album['thumbMouseover']; ?>">
+                                <?php if ($Album['href']): ?>
+                                <a href="<?php echo $Album['href']; ?>" title="<?php echo $Album['title']; ?>">
+                                    <?php endif; ?>
+                                    <?php $this->insert('picture_default', $Album['picture']); ?>
+                                    <?php if ($Album['href']): ?>
+                                </a>
+                                <?php endif; ?>
+                            </figure>
+                        </div>
+
+                        <div class="col_2 col-sm-8 mt-0 mb-0">
+                            <h2><?php echo $Album['name']; ?></h2>
+
+                            <p class="count_pics">
+                                <span class="fa fa-user"></span> von <?php echo $Album['owners_name']; ?>
+                                &nbsp;&nbsp;
+                                <span class="fa fa-calendar"> </span> <?php echo $Album['event_date']; ?>
+                                <br><?php echo $Album['count']; ?> <?php echo $GLOBALS['TL_LANG']['gallery_creator']['pictures']; ?> | <?php echo $Album['visitors']; ?> <?php echo $GLOBALS['TL_LANG']['gallery_creator']['visitors']; ?>
+                            </p>
+
+
+                            <?php if ($Album['count_subalbums']): ?>
+                                <p class="count_pics"><?php echo $Album['count_subalbums']; ?> <?php echo $GLOBALS['TL_LANG']['gallery_creator']['subalbums']; ?></p>
+                            <?php endif; ?>
+                            <?php if ($Album['comment']): ?>
+                                <p class="album_comment"><?php echo \StringUtil::substr($Album['comment'], 200); ?></p>
+                            <?php endif; ?>
+
+                            <a href="<?php echo $Album['href']; ?>" class="btn btn-danger">mehr <span class="fa-solid fa-chevron-right"></span></a>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        <?php endif; ?>
+
+        <?php echo $this->pagination; ?>
+
+    </div>
+<?php endif; ?>
+
+
+
+
+
+
+<?php if (\Input::get('items')): ?>
+<!-- gallery_creator - detailview -->
+<div class="<?php echo $this->class; ?> gallery_creator block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+    <?php if ($this->insertArticlePre): ?>
+        <!-- articleBoxPre-->
+        <div id="articleBoxPre" class="block">
+            <?php echo $this->insertArticlePre; ?>
+        </div>
+        <!-- end articleBoxPre-->
+    <?php endif; ?>
+
+    <?php if ($this->headline): ?>
+        <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+    <?php endif; ?>
+
+    <!-- Album Navigation -->
+    <ul class="pagination pagination-sm">
+
+    <?php if(getPrevLink($this)): ?>
+        <li>
+            <a href="<?php echo getPrevLink($this); ?>">
+                <span class="fa fa-arrow-circle-left"></span> zurück
+            </a>
+        </li>
+    <?php endif; ?>
+
+    <?php if ($this->backLink): ?>
+        <li>
+            <a href="<?php echo $this->backLink; ?>">
+                <span class="fa fa-list-ul"></span> Albumliste
+            </a>
+        </li>
+    <?php endif; ?>
+
+    <?php if(getNextLink($this)): ?>
+        <li>
+            <a href="<?php echo getNextLink($this); ?>">
+                vorw&auml;rts <span class="fa fa-arrow-circle-right"></span>
+            </a>
+        </li>
+    <?php endif; ?>
+
+    </ul>
+    <!-- Ende Album Navigation -->
+
+    <?php if ($this->Albumname): ?>
+        <h1><?php echo $this->Albumname; ?></h1>
+    <?php endif; ?>
+
+
+    <?php if ($this->albumComment): ?>
+        <div class="albumComment well well-info">
+            <p><?php echo $this->albumComment; ?></p>
+        </div>
+    <?php endif; ?>
+
+    <?php echo $this->pagination; ?>
+    <?php $col=0; ?>
+    <?php if ($this->arrPictures): ?>
+        <ul class="album-detailview row">
+            <?php foreach ($this->arrPictures as $Picture): ?>
+                <li class="col-12 col-sm-6 col-md-4 col-lg-3 mb-3" id="picture_<?php echo $Picture['id']; ?>">
+                    <figure data-id="<?php echo $Picture['id']; ?>" <?php echo (strlen($Picture['cssID']) ? ' id="' . $Picture['cssID'] . '"' : ''); ?> class="image_container<?php echo strlen($Picture['cssClass']) ? ' ' . $Picture['cssClass'] : ''; ?>"<?php echo $this->imagemargin ? ' style="'.$this->imagemargin.'"' : ''; ?>>
+                        <?php if ($Picture['href']): ?>
+                        <a href="<?php echo $Picture['href']; ?>" rel="colorbox" data-thumb-href="<?php echo $Picture['thumb_src']; ?>" data-mobile-href="<?php echo TL_FILES_URL . \Image::get($Picture['path'], 600, round($Picture['size'][1]*600/$Picture['size'][0], 0),'proportional'); ?>" <?php echo $Picture['lightbox']; ?> title="<?php echo $Picture['comment'] ? $Picture['comment'] : ($Picture['title'] ? $Picture['title'] : $Picture['filename']); ?>">
+                        <?php endif; ?>
+                            <?php $this->insert('picture_default', $Picture['picture']); ?>
+                        <?php if ($Picture['href'] != ''): ?>
+                        </a>
+                        <?php endif; ?>
+                    </figure>
+                    <figcaption class="caption">
+                        <?php echo $Picture['comment']; ?>
+                    </figcaption>
+                </li>
+            <?php endforeach;?>
+        </ul>
+    <?php endif;?>
+
+
+    <?php
+    if (TL_MODE == 'FE' && \Environment::get('isAjaxRequest'))
+    {
+        // Frontend Bild-Caption Bearbeitung
+        if(\Input::post('caption_submit'))
+        {
+            $objPicture = \MCupic\GalleryCreatorPicturesModel::findByPk(\Input::post('picture_id'));
+            if($objPicture !== null)
+            {
+                $objPicture->comment = \Input::post('picture_caption');
+                $objPicture->save();
+            }
+            exit;
+        }
+    }
+    ?>
+    <script>
+        // Hide Headline in the detail view
+        (function($) {
+            $().ready(function () {
+                $$('.headline').css('display', 'none');
+            });
+        });
+    </script>
+
+    <?php if ($this->insertArticlePost):?>
+        <!-- articleBoxPre-->
+        <div id="articleBoxPost" class="block">
+            <?php echo $this->insertArticlePost; ?>
+        </div>
+        <!-- end articleBoxPost-->
+    <?php endif; ?>
+
+
+
+    <!-- Download modal -->
+    <div id="bsDownloadModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="Downlaod Modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Operationen</h4>
+            </div>
+            <div class="modal-body">
+                <div><span class="fa fa-download"></span> <a href="" class="modal-download-link" download>Bild herunterladen</a></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">schliessen</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+    (function($) {
+        $().ready(function () {
+            $('.album-detailview a').attr('data-target','#bsDownloadModal');
+
+            $('.album-detailview a').on("contextmenu", function (event) {
+                // Avoid the real one
+                event.preventDefault();
+                event.stopPropagation();
+                if (event.button == 2){
+                    var targetModal = $(this).data('target');
+                    $('#bsDownloadModal .modal-download-link').attr('href', $(this).attr('href'));
+                    $('#bsDownloadModal .modal-download-link').attr('download', $(this).attr('href'));
+                    $(targetModal).on('shown.bs.modal', function () {
+                        //
+                    });
+                    $(targetModal).on('hide.bs.modal', function () {
+                        //
+                    });
+                    $(targetModal).modal({
+                        'keyboard':true,
+                        'show':true,
+                        'backdrop': "static"
+                    });
+                }
+            });
+        });
+    })(jQuery);
+    </script>
+
+
+</div>
+<?php endif; ?>
+
+
+
+
+
+<?php
+function getPrevLink($self){
+    global $objPage;
+    $date = $self->arrAlbumdata['date'];
+    $objAlbum = \Database::getInstance()->prepare("SELECT * FROM tl_gallery_creator_albums WHERE published=? AND date<? ORDER BY date DESC LIMIT 0,1")->execute(true, $date);
+    if($objAlbum->numRows)
+    {
+        return $objPage->alias . '/' . $objAlbum->alias;
+    }
+        return false;
+}
+
+function getNextLink($self){
+    global $objPage;
+    $date = $self->arrAlbumdata['date'];
+    $objAlbum = \Database::getInstance()->prepare("SELECT * FROM tl_gallery_creator_albums WHERE published=? AND date>? ORDER BY date DESC LIMIT 0,1")->execute(true, $date);
+    if($objAlbum->numRows)
+    {
+        return $objPage->alias . '/' . $objAlbum->alias;
+    }
+    return false;
+}
+?>
+
+

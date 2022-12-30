@@ -1,0 +1,19 @@
+# config/services.yaml
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+        bind:
+            $projectDir: '%kernel.project_dir%'
+
+    Markocupic\ContaoRszTheme\:
+        resource: ../src/
+        exclude: ../src/{DependencyInjection,Model}
+
+    # Add a session bag
+    Markocupic\ContaoRszTheme\Session\Attribute\ArrayAttributeBag:
+        arguments:
+            - _markocupic_contao_rsz_theme_attributes
+        calls:
+            - [ setName, [ markocupic_contao_rsz_theme ] ]

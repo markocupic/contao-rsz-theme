@@ -1,0 +1,57 @@
+#wrapper {
+
+  #container {
+
+    .mod_article > .container-lg {
+
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+      @include media-breakpoint-down(sm) {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+    }
+
+    .mod_article {
+      background-color: transparent;
+      margin-bottom: 0;
+      margin-top: 0;
+
+      .article-inside {
+        background-color: transparent;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    .mod_article.article-white {
+      background-color: #fff;
+      .article-inside {
+        background-color: #fff;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    .mod_article.article-gray {
+      background-color: $body-bg;
+      .article-inside {
+        background-color: transparent;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+$enable-responsive-font-sizes: true;
+$rfs-base-font-size: 1rem;
+$font-family-base: 'Nunito Sans', sans-serif;
+$font-family-sans-serif: 'Nunito Sans', sans-serif;
+$enable-gradients: false;
+
+// Icon Fontname
+$icon-font-name: "Font Awesome 6 Pro";
+$font-weight-base: 400;
+
+$blue: #0082c7;
+//$red: #C70000;
+$red: #ED1C24;
+$green: #4caf58;
+$orange: #FF9900;
+$purple: #7848B8;
+$primary: $blue;
+$dark: #333;
+
+:root {
+  --red: $red;
+  --green: $green;
+  --orange: $orange;
+  --purple: $purple;
+  --blue: $blue;
+  --primary: $primary;
+}
+
+// Disable border radius
+$enable-rounded: false;
+
+// Border radius buttons
+$btn-border-radius: 0;
+$btn-border-radius-lg: 0;
+$btn-border-radius-sm: 0;
+
+$accent-color: $red;
+$accent-color-2: $blue;
+
+$link-color: $blue;
+
+$body-bg: #fafafa;
+
+// Form Widgets
+$alert-danger-text: $accent-color;

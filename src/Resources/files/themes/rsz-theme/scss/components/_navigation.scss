@@ -1,0 +1,51 @@
+#header {
+
+  .navbar-nav {
+    > li {
+      //margin-left: 1rem;
+      //position: relative !important;
+      > a {
+        color: #000 !important;
+        font-size: 1rem !important;
+        @include media-breakpoint-up(lg) {
+          font-size: 1.25rem !important;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-down(lg) {
+    .navbar-toggler {
+      width: 3.25rem;
+      height: 3.25rem;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+
+      background-color: $red;
+      color: #fff;
+
+      * {
+        color: #fff;
+      }
+    }
+
+    .navbar-nav {
+      padding: 1rem 2rem;
+
+      .dropdown-menu {
+        border: none !important;
+      }
+
+      > li {
+        > a {
+          color: #000 !important;
+          font-size: 1.125rem !important;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
