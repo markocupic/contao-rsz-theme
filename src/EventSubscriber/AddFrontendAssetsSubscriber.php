@@ -52,13 +52,19 @@ class AddFrontendAssetsSubscriber implements EventSubscriberInterface
         SymlinkUtil::symlink('vendor/markocupic/contao-rsz-theme/src/Resources/templates/rsz-theme', 'templates/rsz-theme', $this->projectDir);
 
         if ($this->scopeMatcher->isFrontendRequest($request)) {
+
+            /**
+             * Add viewport tags
+             */
+            $this->addAsset(DocumentLocation::TL_HEAD, '<meta name="viewport" content="width=device-width, initial-scale=1">');
+
             /*
              * Macy masonry layout
              */
             $this->addAsset(DocumentLocation::TL_JAVASCRIPT, 'https://cdn.jsdelivr.net/npm/macy@2');
             $this->addAsset(DocumentLocation::TL_JAVASCRIPT, 'bundles/markocupiccontaorsztheme/js/macy-grid.js');
 
-            /**
+            /*
              * Favicon
              */
             $this->addAsset(
