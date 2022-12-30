@@ -1,5 +1,5 @@
 <!-- indexer::stop -->
-<div class="footer-top p-3 pt-5 pb-5">
+<div class="footer-top pt-0 pt-xl-5 pb-0 pb-xl-5">
   <div class="container-lg mt-4 mb-4">
     <div class="row">
       <div class="col-md-6 col-xl-4">
@@ -38,9 +38,8 @@
   </div>
 </div>
 
-<div class="footer-bottom p-3 pt-5 pb-5">
+<div class="footer-bottom pt-4 pb-4 pt-xl-5 pb-xl-5">
   <div class="container-lg">
-
     <div class="copyright">
       &copy; Copyright <strong><span>Regionalzentrum Sportklettern Zentralschweiz</span></strong>. Alle Rechte vorbehalten
     </div>

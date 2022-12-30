@@ -1,43 +1,4 @@
 
-#footer {
-  background-color: #2c282d;
-  .mod_footer {
-    margin-left: ($grid-gutter-width / 2);
-    margin-right: ($grid-gutter-width / 2);
-    color: #666;
-    .first-row {
-      border-top: 1px solid #333;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      color: #707176;
-      a {
-        color: #707176;
-        &:hover {
-          color: #707176;
-        }
-      }
-    }
-  }
-
-  .mod_footernavigation {
-    ul {
-      text-align: right;
-      padding: 0;
-      margin: 0;
-    }
-    li {
-      display: inline;
-      padding: 0;
-      padding-left: ($grid-gutter-width / 2);
-      margin: 0;
-    }
-  }
-
-
-}
-
-// End footer
-
 figcaption.caption {
   margin: 5px 0 10px 0;
 }

@@ -23,15 +23,17 @@
         background-color: transparent;
         padding-top: 2rem;
         padding-bottom: 2rem;
+        @include media-breakpoint-down(sm) {
+          padding-top: .5rem;
+          padding-bottom: .5rem;
+        }
       }
     }
 
     .mod_article.article-white {
       background-color: #fff;
       .article-inside {
-        background-color: #fff;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        background-color: transparent;
       }
     }
 
@@ -39,8 +41,6 @@
       background-color: $body-bg;
       .article-inside {
         background-color: transparent;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
       }
     }
 

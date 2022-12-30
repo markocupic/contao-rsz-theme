@@ -1,4 +1,4 @@
-<?php $GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.js'; ?>
+<?php $GLOBALS['TL_JAVASCRIPT'][] = 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.7.14/vue.min.js'; ?>
 <div class="pt-4 pb-4">
     <nav class="navbar navbar-expand-lg" id="vueNav_<?= $this->id ?>" v-cloak>
         <div class="container-lg">

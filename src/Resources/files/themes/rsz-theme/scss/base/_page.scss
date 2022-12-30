@@ -36,7 +36,8 @@ body {
 }
 
 #footer {
-
+  display: flex;
+  flex-direction: column;
   .container-lg {
     padding-left: 2rem;
     padding-right: 2rem;
@@ -52,6 +53,8 @@ body {
   }
 
   .footer-top {
+    display: flex;
+    flex-direction: column;
     background: $red;
     color: #fff !important;
 
@@ -61,6 +64,8 @@ body {
   }
 
   .footer-bottom {
+    display: flex;
+    flex-direction: column;
     background: #fff;
     color: #000 !important;
 
