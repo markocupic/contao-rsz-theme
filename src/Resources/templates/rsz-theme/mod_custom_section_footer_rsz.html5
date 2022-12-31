@@ -8,10 +8,10 @@
           <address>
             <p>SAC Regionalzentrum Sportklettern Zentralschweiz</p>
             <p>
-              <strong>Präsident:</strong>{{br}}
-              Gregor Furrer{{br}}
-              <strong>Phone:</strong> +41 79 193 30 18{{br}}
-              <strong>Email:</strong> {{email::vorsitz@kletterkader.com}}
+              <strong>Präsident:</strong><br>
+              Gregor Furrer<br>
+              <strong>Phone:</strong> +41 79 193 30 18<br>
+              <strong>Email:</strong>  {{ '{{email::vorsitz@kletterkader.com}}' }}
             </p>
           </address>
 
@@ -26,13 +26,13 @@
         <h4 class="mt-0 footer-headline">Nützliche Links</h4>
         <ul>
           <li><i class="fa-solid fa-chevron-right"></i> <a href="https://www.pilatusindoor.ch/"> Pilatus Indoor</a></li>
-          <li><i class="fa-solid fa-chevron-right"></i> <a href="{{link_url::kontakt}}">Kontakt</a></li>
-          <li><i class="fa-solid fa-chevron-right"></i> <a href="{{link_url::suchen}}">Suchen</a></li>
-          <li><i class="fa-solid fa-chevron-right"></i> <a href="{{link_url::impressum}}">Impressum</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i> <a href="{{ '{{link_url::kontakt}}' }}">Kontakt</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i> <a href="{{ '{{link_url::suchen}}' }}">Suchen</a></li>
+          <li><i class="fa-solid fa-chevron-right"></i> <a href="{{ '{{link_url::impressum}}' }}">Impressum</a></li>
         </ul>
       </div>
       <div class="d-none d-xl-block col-xl-4">
-        {{image::files/themes/rsz-theme/logos/logos_rsz_new/RSZ/RSZ_negativ.svg}}
+        {{ '{{image::files/themes/rsz-theme/logos/logos_rsz_new/RSZ/RSZ_negativ.svg}}'|raw }}
       </div>
     </div>
   </div>

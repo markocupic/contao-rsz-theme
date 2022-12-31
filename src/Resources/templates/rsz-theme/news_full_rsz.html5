@@ -3,22 +3,46 @@
   <h1><?= $this->newsHeadline ?></h1>
 
   <?php if ($this->hasMetaFields): ?>
-    <p class="info"><time datetime="<?= $this->datetime ?>"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
+  <p class="info"><time datetime="<?= $this->datetime ?>"><?= $this->date ?></time> <?= $this->author ?> <?= $this->commentCount ?></p>
   <?php endif; ?>
 
   <?php if ($this->hasSubHeadline): ?>
-    <h2><?= $this->subHeadline ?></h2>
+  <h2><?= $this->subHeadline ?></h2>
   <?php endif; ?>
 
   <?php if ($this->hasText): ?>
-      <?= $this->text ?>
+  <?= $this->text ?>
+  <?php else: ?>
+  <div class="ce_text block">
+    <?php if (!$this->addBefore): ?>
+    <?= $this->teaser ?>
+    <?php endif; ?>
+
+    <?php if ($this->addBefore): ?>
+    <?= $this->teaser ?>
+    <?php endif; ?>
+  </div>
   <?php endif; ?>
 
   <?php if ($this->enclosure): ?>
-    <div class="enclosure">
-      <?php foreach ($this->enclosure as $enclosure): ?>
-        <p><?= Image::getHtml($enclosure['icon'], '', 'class="mime_icon"') ?> <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a></p>
-      <?php endforeach; ?>
-    </div>
+  <ul class="enclosure">
+    <?php foreach ($this->enclosure as $enclosure): ?>
+    <li class="download-element ext-<?= $enclosure['extension'] ?>">
+      <a href="<?= $enclosure['href'] ?>" title="<?= $enclosure['title'] ?>"><?= $enclosure['link'] ?> <span class="size">(<?= $enclosure['filesize'] ?>)</span></a>
+    </li>
+    <?php endforeach; ?>
+  </ul>
   <?php endif; ?>
+
 </div>
+
+<?php
+
+$schemaOrg = $this->getSchemaOrgData();
+
+if ($this->hasText) {
+$schemaOrg['text'] = $this->rawHtmlToPlainText($this->text);
+}
+
+$this->addSchemaOrg($schemaOrg);
+
