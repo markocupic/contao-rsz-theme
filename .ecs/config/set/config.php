@@ -17,11 +17,11 @@ return static function (ECSConfig $ecsConfig): void {
     ]);
 
     $ecsConfig->ruleWithConfiguration(HeaderCommentFixer::class, [
-        'header' => "This file is part of Contao RSZ Theme Regionalzentrum Sportklettern Zentralschweiz.\n\n(c) Marko Cupic 2022 <m.cupic@gmx.ch>\n@license GPL-3.0-or-later\nFor the full copyright and license information,\nplease view the LICENSE file that was distributed with this source code.\n@link https://github.com/markocupic/contao-rsz-theme",
+        'header' => "This file is part of Contao RSZ Theme Regionalzentrum Sportklettern Zentralschweiz.\n\n(c) Marko Cupic ".\date("Y")." <m.cupic@gmx.ch>\n@license GPL-3.0-or-later\nFor the full copyright and license information,\nplease view the LICENSE file that was distributed with this source code.\n@link https://github.com/markocupic/contao-rsz-theme",
     ]);
 
     $ecsConfig->parallel();
     $ecsConfig->lineEnding("\n");
 
-    $parameters = $ecsConfig->parameters();
+    $ecsConfig->parameters();
 };

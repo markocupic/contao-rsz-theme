@@ -35,6 +35,9 @@
         "symfony/phpunit-bridge": "^5.4",
         "contao/easy-coding-standard": "^3.0"
     },
+    "suggest": {
+        "markocupic/contao-component-bootstrap": "You have to embed the Bootstrap library."
+    },
     "autoload": {
         "psr-4": {
             "Markocupic\\ContaoRszTheme\\": "src/"

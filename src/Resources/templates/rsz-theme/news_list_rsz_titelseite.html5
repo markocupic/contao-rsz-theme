@@ -10,7 +10,10 @@
 
       <a href="<?=$this->link ?>" title="<?= $this->headline ?>">
         <?php $this->insert('picture_default', $this->picture); ?>
-        <figcaption class="caption"><?= $this->headline ?></figcaption>
+        <figcaption class="caption"><div class="figure-caption-inner">
+          <?= $this->headline ?>
+        </div>
+        </figcaption>
 
       </a>
 

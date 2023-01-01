@@ -27,26 +27,31 @@
 </div>
 
 <script>
-    const {createApp} = Vue
+    document.addEventListener('DOMContentLoaded', () => {
+        const {createApp} = Vue
 
-    let app = createApp({
-        data() {
-            return {
-                objNav: {
-                    'class': '{{ class }}',
-                    'cssId': '{% if cssId is defined %}{{ cssId }}{% endif %}',
-                    'style': '{% if style is defined %}{{ style|raw }}{% endif %}',
-                    'hl': '{% if hl is defined %}{{ hl|raw }}{% endif %}',
-                    'headline': '{% if headline is defined %}{{ headline|raw }}{% endif %}',
-                    'request': '{% if request is defined %}{{ request|raw }}{% endif %}',
-                    'skipId': '{% if skipId is defined %}{{ skipId }}{% endif %}',
-                    {# Insert nav items #}
-                    'items': [{% if items is defined %}{{ items|raw }}{% endif %}]
+        let app = createApp({
+            data() {
+                return {
+                    objNav: {
+                        'class': '{{ class }}',
+                        'cssId': '{% if cssId is defined %}{{ cssId }}{% endif %}',
+                        'style': '{% if style is defined %}{{ style|raw }}{% endif %}',
+                        'hl': '{% if hl is defined %}{{ hl|raw }}{% endif %}',
+                        'headline': '{% if headline is defined %}{{ headline|raw }}{% endif %}',
+                        'request': '{% if request is defined %}{{ request|raw }}{% endif %}',
+                        'skipId': '{% if skipId is defined %}{{ skipId }}{% endif %}',
+                        'items': [
+                            {%- if items is defined -%}
+                            {{- items|raw -}}
+                            {%- endif -%}
+                        ],
+                    }
                 }
             }
-        }
-    });
+        });
 
-    app.config.compilerOptions.delimiters = ['[[', ']]'];
-    const mountedApp = app.mount('#vueNav_{{ id }}');
+        app.config.compilerOptions.delimiters = ['[[', ']]'];
+        app.mount('#vueNav_{{ id }}');
+    }, false);
 </script>
