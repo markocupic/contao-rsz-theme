@@ -1,4 +1,4 @@
-![Alt text](docs/rsz-logo.svg?raw=true "logo")
+![Alt text](docs/rsz-logo.png?raw=true "logo")
 
 # Contao Theme für das Regionalzentrum Sportklettern Zentralschweiz, RSZ
 
