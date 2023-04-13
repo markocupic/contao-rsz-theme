@@ -4,7 +4,7 @@
 // this won't work --> @import "/../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
 // because the main.scss is located in:
 // vendor/markocupic/contao-rsz-theme/src/Resources/files/themes/rsz-theme/scss/main.scss
-@import "../../../../../../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
+@import "../../../../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
 
 // MIXINS
 @import "mixins/_mixins.scss";
@@ -14,7 +14,6 @@
 @import "base/article";
 @import "base/type";
 @import "base/sticky_footer";
-
 
 // Components
 @import "components/layout_mobile_first";
