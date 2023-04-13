@@ -1,0 +1,45 @@
+body{
+  background-color: #fff;
+}
+// overwrite bootstrap .container padding
+.container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#container {
+  margin-top: 89px;
+  #main > .inside{
+    padding-top:2rem;
+  }
+}
+
+#header{
+  background-color: #f5f6f7 !important;
+  .inside{
+    padding: 1rem 2rem;
+  }
+  .navbar{
+    background: transparent !important;
+  }
+}
+
+
+#footer{
+  .footer-headline{
+    color: #41474d;
+  }
+  a{
+    color: #6c757d;
+  }
+  font-size: 0.875rem;
+  .footer-top{
+    background: #1C2331;
+    color: #b1adad !important;
+  }
+
+  .footer-bottom{
+    background: #000000;
+    color: #b1adad !important;
+  }
+}

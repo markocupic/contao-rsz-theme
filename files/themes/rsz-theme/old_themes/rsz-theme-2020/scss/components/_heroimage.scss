@@ -1,0 +1,79 @@
+.ce_heroimage .heroimage-wrapper {
+
+  display: flex;
+
+  min-height: 300px;
+
+  @include media-breakpoint-up(sm) {
+    min-height: 430px;
+  }
+  @include media-breakpoint-up(md) {
+    min-height: 460px;
+  }
+  @include media-breakpoint-up(lg) {
+    min-height: 490px;
+  }
+  @include media-breakpoint-up(xl) {
+    min-height: 570px;
+  }
+
+  @media (min-width: 1800px) {
+    min-height: 650px;
+  }
+
+}
+
+.heroimage-headline-box h1 {
+  //font-weight: 600 !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+  font-size: 3rem !important;
+  line-height: 1.5rem;
+}
+
+.ce_heroimage .heroimage-headline-box {
+  margin-bottom: 2rem;
+}
+
+.ce_heroimage .heroimage-text-box {
+  //font-style: italic;
+  color: #fff;
+  text-align: center;
+
+}
+
+.heroimage-button-box > a {
+  font-size: 1.25rem;
+  @include icon-after('\f35a', false, 'inline-flex');
+}
+
+.heroimage-button-box .btn.btn-primary {
+  background: red !important;
+}
+
+@include media-breakpoint-up(sm) {
+
+  .ce_heroimage .heroimage-headline-box h1 {
+    //font-size: 3.5rem;
+    //line-height: 5.2rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .ce_heroimage .heroimage-headline-box h1 {
+    //font-size: 4.5rem;
+    //line-height: 6.75rem;
+  }
+
+}
+
+@include media-breakpoint-up(xl) {
+  .ce_heroimage .heroimage-headline-box h1 {
+    //font-size: 5rem;
+    //line-height: 7.5rem;
+  }
+}
+
+
+

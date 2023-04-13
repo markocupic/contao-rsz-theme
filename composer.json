@@ -1,6 +1,6 @@
 {
     "name": "markocupic/contao-rsz-theme",
-    "description": "Contao RSZ Theme &#40;Regionalzentrum Sportklettern Zentralschweiz&#41;",
+    "description": "Contao RSZ Theme for Regionalzentrum Sportklettern Zentralschweiz",
     "keywords": [
         "contao",
         "bundle",
@@ -24,7 +24,7 @@
     "require": {
         "php": "^8.1",
         "contao/core-bundle": "^4.13 || ^5.0",
-        "markocupic/contao-article-class-select-bundle": "2.1.0",
+        "markocupic/contao-article-class-select-bundle": "^2.2",
         "markocupic/contao-twig-assets": "^1.0",
         "inspiredminds/contao-glightbox": "^1.0"
     },
@@ -48,8 +48,7 @@
         "allow-plugins": {
             "contao-components/installer": true,
             "contao/manager-plugin": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "contao-community-alliance/composer-plugin": true
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "extra": {
@@ -57,4 +56,3 @@
     },
     "version": "1.0.0"
 }
-

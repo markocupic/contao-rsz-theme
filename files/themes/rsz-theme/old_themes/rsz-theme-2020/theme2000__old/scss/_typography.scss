@@ -1,0 +1,125 @@
+
+h1,
+.h1 {
+  font-weight: 500;
+  margin-bottom: 1.5rem !important;
+  color: $color-h1;
+  color: #06c;
+  line-height: 2.8rem;
+}
+
+h2,
+.h2 {
+  color: $color-h4;
+}
+
+h3,
+.h3 {
+  color: $color-h4;
+
+}
+
+h4,
+.h4 {
+  color: $color-h4;
+}
+
+h5,
+.h5 {
+  color: $color-h5;
+}
+
+h6,
+.h6 {
+  color: $color-h6;
+}
+
+#container {
+  a:hover, a:focus {
+    color: $link-hover-color;
+  }
+}
+
+p.info {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.ce_downloads ul {
+  padding: 0;
+}
+
+ul.row, .mod_faqlist ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+ul li img {
+  cursor: pointer;
+}
+
+*[class*="ce_"] ul {
+  padding: 0;
+  padding-top: 0.625rem;
+}
+
+ul.unordered_list, .unordered_list ul, .ce_text ul {
+  li {
+    line-height: 1.7;
+    display: table-row;
+    margin-top: 2.5rem;
+
+    &:before {
+      content: "\f105";
+      font-family: $icon-font-name;
+      color: #666;
+      font-weight: normal;
+      display: table-cell;
+      padding-right: 10px;
+    }
+  }
+}
+
+.hyphenate, .hyphenate * {
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+}
+
+.socialbutton {
+  color: $color-red !important;
+  font-size: 1.625rem !important;
+}
+
+#container a, #header a {
+  color: $link-color;
+}
+
+#container {
+  p, li, a, div, form * {
+    font-size: $default-font-size;
+  }
+  p {
+    line-height: 1.75rem;
+  }
+}
+
+#footer {
+  font-size: 0.75rem;
+  a {
+    font-weight: 600;
+  }
+}
+
+
+
+
+
+
+
+

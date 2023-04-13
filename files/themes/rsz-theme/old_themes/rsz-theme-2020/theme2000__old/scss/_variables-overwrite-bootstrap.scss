@@ -1,0 +1,31 @@
+/* Overwrite bootstrap variables */
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$body-bg: #edeff0;
+$default-font-size: 0.875rem;
+$font-size-h1: 1.8rem;
+$font-size-h2: 1.125rem;
+$font-size-h3: 1rem;
+$font-size-h4: 0.9375rem;
+$font-size-h5: 0.875rem;
+$font-size-h6: 0.8125rem;
+$link-color: #C52D2F;
+$link-hover-color: darken($link-color, 20%);
+
+
+/* Define own variables */
+$icon-font-name: "Font Awesome 5 Pro";
+
+
+$color-red: #C52D2F;
+$link-color: $color-red;
+$color-blue: #06c;
+
+$color-h1: $color-blue;
+$color-h2: #000;
+$color-h3: #000;
+$color-h4: #000;
+$color-h5: #000;
+$color-h6: #000;
+

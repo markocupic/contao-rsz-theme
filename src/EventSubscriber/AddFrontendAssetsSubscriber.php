@@ -48,8 +48,7 @@ class AddFrontendAssetsSubscriber implements EventSubscriberInterface
         /*
          * Symlink theme assets and template folder
          */
-        SymlinkUtil::symlink('vendor/markocupic/contao-rsz-theme/src/Resources/files/themes/rsz-theme', 'files/themes/rsz-theme', $this->projectDir);
-        SymlinkUtil::symlink('vendor/markocupic/contao-rsz-theme/src/Resources/templates/rsz-theme', 'templates/rsz-theme', $this->projectDir);
+        SymlinkUtil::symlink('vendor/markocupic/contao-rsz-theme/files/themes/rsz-theme', 'files/themes/rsz-theme', $this->projectDir);
 
         if ($this->scopeMatcher->isFrontendRequest($request)) {
             /*

@@ -1,0 +1,23 @@
+
+ul.pagination {
+  padding-left: 1px;
+  li {
+    @extend .page-item;
+    background-color: transparent;
+    border: 0;
+
+    a {
+      @extend .page-link;
+      background-color: transparent !important;
+      border-color: transparent !important;
+    }
+
+    .current.page-link{
+      background-color: red;
+      color: #fff;
+    }
+
+    margin-right: 2px;
+
+  }
+}

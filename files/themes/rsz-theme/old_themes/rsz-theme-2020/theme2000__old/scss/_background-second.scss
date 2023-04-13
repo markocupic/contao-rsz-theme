@@ -1,0 +1,16 @@
+
+.background-second{
+  margin:0;
+  background-color: $gray-200 !important;
+  div {
+    //background-color: $background-color-two !important;
+
+  }
+  h1{
+    color: $color-blue;
+  }
+  p,li,ul,li::before {
+    color: #4a4a4a !important;
+  }
+
+}

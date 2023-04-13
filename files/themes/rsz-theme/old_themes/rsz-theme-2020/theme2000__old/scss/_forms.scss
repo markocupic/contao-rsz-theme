@@ -1,0 +1,37 @@
+
+#main {
+  .formbody {
+    .input-group {
+      margin-bottom: 1rem;
+    }
+    .checkbox_container {
+      margin: 10px 0;
+    }
+    .captcha_text {
+      margin-top: 10px;
+      display: block;
+    }
+    .checkbox_container label,
+    .checkbox_container .checkbox,
+    .checkbox_container input.checkbox,
+    .radio_container label,
+    .radio_container .checkbox,
+    .radio_container input.radio {
+      margin: 0;
+      padding: 0;
+      padding-right: 5px;
+      display: inline;
+    }
+
+    label {
+      font-weight: bold;
+    }
+    .form-control {
+      max-width: 400px;
+    }
+  }
+
+}
+
+
+

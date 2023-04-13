@@ -1,0 +1,74 @@
+@include media-breakpoint-up(sm) {
+  #main {
+    margin-top: 15px
+  }
+}
+
+@include media-breakpoint-up(md){
+
+  #header {
+  }
+  #right {
+  }
+  #main {
+  }
+  #container {
+  }
+
+}
+
+@include media-breakpoint-up(lg) {
+  //
+}
+
+/* landscape phones and more */
+@include media-breakpoint-up(sm) {
+
+  #main {
+    .mod_article {
+      .gallery_creator .caption {
+        display: none;
+      }
+      .ce_gallery .caption {
+        display: none;
+      }
+
+      .ce_serviceLink {
+        .service-link-headline {
+          font-size: 22px !important;
+        }
+      }
+    }
+  }
+  #container {
+    margin-bottom: 76px;
+  }
+
+}
+
+/* tablets and more */
+@include media-breakpoint-up(md) {
+
+  #header {
+    margin-bottom: 1rem;
+
+    .main-navigation-desktop .nav-item-anmelden {
+      display: none;
+    }
+  }
+
+
+  #footer {
+    border-radius: 3px;
+  }
+}
+
+/* Desktops and more */
+@include media-breakpoint-up(lg) {
+  //
+}
+
+
+
+
+

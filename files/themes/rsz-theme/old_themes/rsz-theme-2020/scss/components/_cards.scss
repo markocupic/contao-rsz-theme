@@ -1,0 +1,50 @@
+.card-columns {
+  @extend .row;
+
+  .card-date {
+    color: $gray-500;
+  }
+
+  a > .card-title .card-title {
+    color: #d50000 !important;
+    line-height: 1.4;
+  }
+
+  .card {
+    position: inherit;
+  }
+}
+
+.card {
+  @extend .col-12;
+  @extend .col-sm-6;
+  @extend .col-lg-4;
+  @extend .col-xl-3;
+
+  margin-bottom: $grid-gutter-width/2;
+  border: 0;
+
+  .caption {
+    display: none;
+  }
+
+  figure {
+    max-width: 100% !important;
+  }
+
+  img {
+    @extend .img-fluid;
+  }
+
+  .card-body {
+    a, .card-title {
+      color: #d50000 !important;
+      line-height: 1.4;
+      text-decoration-color: $red;
+    }
+  }
+}
+
+.card.gray-lightest {
+  background-color: $gray-300;
+}

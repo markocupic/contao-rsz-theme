@@ -19,7 +19,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-    public const ROOT_KEY = 'markocupic_contao_rsz_theme';
+    public const ROOT_KEY = 'contao_rsz_theme';
 
     public function getConfigTreeBuilder(): TreeBuilder
     {
