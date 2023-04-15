@@ -1,3 +1,8 @@
+// gallery creator
+img.img-fluid-w-100, .img-fluid-w-100 img {
+  @extend .img-fluid;
+  @extend .w-100;
+}
 
 .image_container {
   overflow: hidden;
@@ -6,6 +11,7 @@
 .image_container img {
   //width: 100%;
   @include transition(all);
+
   &:hover {
     //transform: scale(1.1);
   }
@@ -16,14 +22,15 @@ img {
   max-width: 100%;
 }
 
-figure{
-  margin:0;
-  padding:0;
+figure {
+  margin: 0;
+  padding: 0;
 }
 
 .ce_gallery {
-  ul:first-child{
+  ul:first-child {
     @extend .row;
+
     li {
       @extend .col-6;
       @extend .col-sm-4;
@@ -34,6 +41,7 @@ figure{
       padding-right: $grid-gutter-width/4;
     }
   }
+
   .row {
     [class*="col-"] {
     }
@@ -42,10 +50,10 @@ figure{
 
 // Do not show caption on mobile phones
 @include media-breakpoint-up(sm) {
-      .gallery_creator .caption {
-        display: none;
-      }
-      .ce_gallery .caption {
-        display: none;
-      }
+  .gallery_creator .caption {
+    display: none;
+  }
+  .ce_gallery .caption {
+    display: none;
+  }
 }
